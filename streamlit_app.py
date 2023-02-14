@@ -6,38 +6,23 @@ import streamlit as st
 
 """
 # 欢迎使用登陆系统!
-
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
 """
 
+file = st.file_uploader("Pick a file")
 
-# markdown
-st.markdown('Streamlit Demo')
+pet = st.radio("Pick a pet", pets)
 
-# 设置网页标题
-st.title('一个傻瓜式构建可视化 web的 Python 神器 -- streamlit')
+with st.form("my_form"):
+   st.write("Inside the form")
+   slider_val = st.slider("Form slider")
+   checkbox_val = st.checkbox("Form checkbox")
 
-# 展示一级标题
-st.header('1. 安装')
+   # Every form must have a submit button.
+   submitted = st.form_submit_button("Submit")
+   if submitted:
+       st.write("slider", slider_val, "checkbox", checkbox_val)
 
-st.text('和安装其他包一样，安装 streamlit 非常简单，一条命令即可')
-code1 = '''pip3 install streamlit'''
-st.code(code1, language='bash')
-
-
-# 展示一级标题
-st.header('2. 使用')
-
-# 展示二级标题
-st.subheader('2.1 生成 Markdown 文档')
-
-# 纯文本
-st.text('导入 streamlit 后，就可以直接使用 st.markdown() 初始化')
-
-# 展示代码，有高亮效果
-code2 = '''import streamlit as st
-st.markdown('Streamlit Demo')'''
-st.code(code2, language='python')
+st.write("Outside the form")
 
 
 # with st.echo(code_location='below'):
