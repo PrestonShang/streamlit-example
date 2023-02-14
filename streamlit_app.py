@@ -19,7 +19,7 @@ with st.form("my_form"):
    st.write("Inside the form")
    slider_val = st.slider("Form slider")
    checkbox_val = st.checkbox("Form checkbox")
-    title = st.text_input('Movie title', 'Life of Brian')
+   title = st.text_input('Movie title', 'Life of Brian')
 
    # Every form must have a submit button.
    submitted = st.form_submit_button("Submit")
